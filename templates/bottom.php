@@ -10,6 +10,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
     <?
       if ($_SESSION['user_id']) { // Если пользователь зашел авторизованным, подключить ему еще один скрипт

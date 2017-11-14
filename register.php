@@ -32,7 +32,7 @@
 			}
 		$already_eser = mysqli_fetch_array($adr);
 		if (empty($already_user)) {
-			$errors[] = 'Такой email уже зарегистрирован в системе'
+			$errors[] = 'Такой email уже зарегистрирован в системе';
 		}
 
 

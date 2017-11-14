@@ -38,18 +38,18 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
-              <a class="nav-link" href="static.php?url=about">About</a>
+              <a class="nav-link menu" href="static.php?url=about" data-body="Раздел о Компании. Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст " data-color="green">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="static.php?url=services">Services</a>
+              <a class="nav-link menu" href="static.php?url=services" data-body="Раздел об Услугах. Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст " data-color="green">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="static.php?url=contacts">Contact</a>  
+              <a class="nav-link menu" href="static.php?url=contacts" data-body="Раздел с Контактами Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст " data-color="green">Contact</a>  
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link menu dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-body="Раздел с Портфолио. Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст " data-color="green">
                 Portfolio
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
@@ -61,7 +61,7 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link menu dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-body="Раздел с Блогом. Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст " data-color="green">
                 Blog
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
@@ -115,3 +115,5 @@
         </div>
       </div>
     </nav>
+    <div id="tips">Привет</div>
+
