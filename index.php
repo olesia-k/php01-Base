@@ -3,10 +3,6 @@
 	require_once('templates/top.php');
 	require_once('templates/carousel.php');
 
-	 
-
-	$title = "Главная страница"; // Не работает
-
 ?>
 
     <header>

@@ -47,3 +47,24 @@
 	background: rgba(0, 0, 0, 0.3);	
 }
 
+.ok-wrap {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 0px 20px 30px ;
+}
+
+.ok-wrap ul {
+	list-style-type: none;
+}
+
+.ok-wrap li {
+	margin: 10px 0;
+}
+
+.ok-wrap li:first-child {
+	margin: 0px;
+} 
+
+
+
