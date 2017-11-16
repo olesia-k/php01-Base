@@ -2,10 +2,10 @@
 -- version 4.0.10.10
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 26, 2017 at 09:12 PM
--- Server version: 5.5.45
--- PHP Version: 5.3.29
+-- Хост: 127.0.0.1:3306
+-- Время создания: Ноя 09 2017 г., 19:21
+-- Версия сервера: 5.5.45
+-- Версия PHP: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ok-bd`
+-- База данных: `new-bd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catalogs`
+-- Структура таблицы `catalogs`
 --
 
 CREATE TABLE IF NOT EXISTS `catalogs` (
@@ -35,46 +35,77 @@ CREATE TABLE IF NOT EXISTS `catalogs` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `catalogs`
+-- Дамп данных таблицы `catalogs`
 --
 
 INSERT INTO `catalogs` (`id`, `name`, `body`, `type`) VALUES
-(1, 'Каталог Товаров', 'Куча разных ненужных никому товаров', 'main'),
-(2, 'Каталог Услуг', 'Перечень надоевших услуг', 'main'),
-(3, 'Готовые решения', 'Готовые решения, как от всего этого избавиться', 'main');
+(1, 'Каталог Товаров', 'Различные товары', 'main'),
+(2, 'Каталог Услуг', 'Различные услуги', 'main'),
+(3, 'Шаблоны', 'Шаблоны товаров и услуг', 'main');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mains`
+-- Структура таблицы `maintexts`
 --
 
-CREATE TABLE IF NOT EXISTS `mains` (
+CREATE TABLE IF NOT EXISTS `maintexts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
-  `url` tinytext CHARACTER SET utf16 NOT NULL,
+  `url` tinytext NOT NULL,
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
-  `lang` enum('ru','en') NOT NULL,
+  `lang` enum('ru','en') NOT NULL DEFAULT 'ru',
   `putdate` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `mains`
+-- Дамп данных таблицы `maintexts`
 --
 
-INSERT INTO `mains` (`id`, `name`, `body`, `url`, `showhide`, `lang`, `putdate`) VALUES
-(1, 'Доброе пожаловать на сайт', 'Какой-то текст на Главной', 'index', 'show', 'ru', '2017-10-24'),
-(2, 'Контакты', 'Телефон', 'contacts', 'show', '', '0000-00-00'),
-(3, 'О нас', 'Текс о нас', 'about', 'show', 'ru', '2017-10-24'),
-(4, 'Сервисы', 'Текст про сервисы', 'services', 'show', 'ru', '2017-10-24'),
-(5, 'Портфолио', 'Примеры работ', 'portfolio-1-col', 'show', 'ru', '2017-10-24');
+INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `showhide`, `lang`, `putdate`) VALUES
+(1, 'Добро пожаловать на сайт', 'text text text text text text text text text text text text text text text text text text text text text text text text ', 'index', 'show', 'ru', '2017-10-24'),
+(2, 'контакты', 'телефон', 'contacts', 'show', 'ru', '2017-10-24'),
+(3, 'Services', 'Text Services', 'services', 'show', 'ru', '2017-10-24'),
+(4, 'About', 'text About', 'About', 'show', 'ru', '2017-10-24');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `products`
+--
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` tinytext NOT NULL,
+  `body` text NOT NULL,
+  `picture` tinytext NOT NULL,
+  `price` tinytext NOT NULL,
+  `vip` tinytext NOT NULL,
+  `putdate` tinytext NOT NULL,
+  `url` tinytext NOT NULL,
+  `product_code` tinytext NOT NULL,
+  `status` tinytext NOT NULL,
+  `catalog_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `body`, `picture`, `price`, `vip`, `putdate`, `url`, `product_code`, `status`, `catalog_id`, `user_id`) VALUES
+(8, 'BOLODARUM', 'GOR VUHE GARNOL', '17_10_31_08_24_53.jpg', '1155', '0', '2017-10-31 20:24:53', '-', '171031082453', 'new', 0, 1),
+(9, 'ABABABABABA', 'Bodydsdada', '17_10_31_08_39_24.jpg', '5115', '0', '2017-10-31 20:39:24', '-', '171031083924', 'new', 0, 1),
+(10, 'ARARARAR', 'BYYBBSADS', '17_10_31_08_41_33.jpg', '1551', '0', '2017-10-31 20:41:33', '-', '171031084133', 'new', 1, 1),
+(11, 'HAHAHAHAHAH', 'BodyUHUHUHHUHUHUHUH', '17_11_02_07_42_26.jpg', '-', '0', '2017-11-02 19:42:26', '-', '171102074226', 'new', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -82,18 +113,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` tinytext NOT NULL,
   `email` tinytext NOT NULL,
   `password` tinytext NOT NULL,
-  `blockunblock` enum('unblock','block') NOT NULL DEFAULT 'unblock',
+  `blockundblock` enum('unblock','block') NOT NULL DEFAULT 'unblock',
   `datareg` date NOT NULL,
   `lastvisit` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `blockunblock`, `datareg`, `lastvisit`) VALUES
-(1, 'sdf', 'sdf@gamil.ru', '123', 'unblock', '2017-10-26', '2017-10-26 19:42:42');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `blockundblock`, `datareg`, `lastvisit`) VALUES
+(1, 'sadadas', 'saas@as.ru', 'asdasd', 'unblock', '2017-10-26', '2017-10-26 19:36:13');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

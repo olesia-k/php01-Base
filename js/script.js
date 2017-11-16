@@ -24,7 +24,27 @@ $(function() {  // Ограничители jQuery, внутри которых 
 
 			var modal = $('<div class="modal-win >').appendTo('body');			
 
-			console.log(55555);
+			// ======== Создаем AJAX запрос ========
+
+			var url = $(this).attr('href');
+			
+			$.ajax({
+				url: 'ajax.php', // Обязательный атрибут
+				type: 'POST',
+				data: 'url=' + url, // Передаем в ajax.php методом POST переменную url
+				success: function(data) {
+					$('.modal-win').append(data); 
+					console.log(data);
+				},
+				error: function(msg) {
+					$('.modal-win').append(data); // Вывод ошибки
+				}
+			})
+
+			// Проверка ajax запросов - Network
+
+
+			
 			$('<a class="modal-close-btn">').attr('href', '#').html('&times;').click(function(event) {
 				event.preventDefault();
 				$('.modal-win').remove();

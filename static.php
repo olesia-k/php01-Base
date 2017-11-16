@@ -29,5 +29,5 @@
 </div>   
 
 <?php require_once('templates/bottom.php') ?>
-?>
+
 

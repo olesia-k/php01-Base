@@ -13,6 +13,16 @@
     <script src="js/script.js"></script>
 
     <?
+
+      if(!empty($scripts)) {
+      foreach($scripts as $script) {
+    ?>
+        <script src="<?=$script?>"></script>
+    <?      
+      }
+    }
+
+    
       if ($_SESSION['user_id']) { // Если пользователь зашел авторизованным, подключить ему еще один скрипт
           ?>
             <script src="js/cabinet.js"></script>
